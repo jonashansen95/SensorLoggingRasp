@@ -33,7 +33,7 @@ while True:
             humidityList.pop(0)
         if len(temperatureList) > size:
             temperatureList.pop(0)
-            payload = {"temp": temperature, "humidity": humidity}
+        payload = {"temp": temperature, "humidity": humidity}
 
-            r = requests.post(url, headers=headers, data=payload)
-            print(r.status_code)
+        r = requests.post(url, headers=headers, data=payload)
+        print(r.status_code)
