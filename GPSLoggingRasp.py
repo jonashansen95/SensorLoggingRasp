@@ -1,10 +1,5 @@
-#! /usr/bin/python
-# Written by Dan Mandle http://dan.mandle.me September 2012
-# License: GPL 2.0
-
 import os
 from gps import *
-from time import *
 import time
 import threading
 import requests
@@ -33,7 +28,7 @@ if __name__ == '__main__':
     try:
         gpsp.start()  # start it up
         while True:
-            url = "https://joerha.dk/gps"
+            url = "https://api.joerha.dk/gps"
             headers = {"X-API-Key": "d2c9c21f077d65cfe53388a976764472"}
 
             payload = {"time": gpsd.utc, "longitude": gpsd.fix.longitude, "latitude": gpsd.fix.latitude,
@@ -43,7 +38,7 @@ if __name__ == '__main__':
             r = requests.post(url, headers=headers, data=payload)
             print(r.status_code)
 
-            time.sleep(5)  # set to whatever
+            time.sleep(0.5)  # set to whatever
 
     except (KeyboardInterrupt, SystemExit):  # when you press ctrl+c
         print"\nKilling Thread..."
