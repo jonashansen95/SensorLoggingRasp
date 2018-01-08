@@ -12,7 +12,7 @@ def evaluate(value, list, allowedOffset):
     return value
 
 
-url = "https://joerha.dk/climate"
+url = "https://api.joerha.dk/climate"
 headers = {"X-API-Key": "d2c9c21f077d65cfe53388a976764472"}
 
 humidityList = []
